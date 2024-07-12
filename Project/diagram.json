@@ -3,16 +3,9 @@
   "author": "The Bin - Hack Club",
   "editor": "wokwi",
   "parts": [
-    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-pi-pico-w", "id": "pico", "top": -3.25, "left": 3.55, "attrs": {} },
     { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": -105.3, "left": 138.6, "attrs": {} },
     { "type": "wokwi-rgb-led", "id": "wokwi-rgb-led-0", "top": 4, "left": 260.3, "attrs": {} },
-    {
-      "type": "board-ds18b20",
-      "id": "board-ds18b20-0",
-      "top": 238.87,
-      "left": -72.72,
-      "attrs": {}
-    },
     {
       "type": "board-ssd1306",
       "id": "board-ssd1306-0",
@@ -20,19 +13,19 @@
       "left": 211.43,
       "attrs": {}
     },
-    { "type": "wokwi-servo", "id": "wokwi-servo-0", "top": 391.6, "left": 9.6, "attrs": {} },
+    { "type": "wokwi-servo", "id": "wokwi-servo-0", "top": 382, "left": 19.2, "attrs": {} },
     {
       "type": "wokwi-pushbutton",
       "id": "wokwi-pushbutton-0",
-      "top": 63.8,
-      "left": -86.4,
+      "top": 25.4,
+      "left": -105.6,
       "attrs": {}
     },
     {
       "type": "wokwi-mpu6050",
       "id": "wokwi-mpu6050-0",
-      "top": 263.02,
-      "left": 21.52,
+      "top": 282.22,
+      "left": -7.28,
       "attrs": {}
     },
     { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 60, "left": 328.2, "attrs": {} }
@@ -40,24 +33,21 @@
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "pico:GND.1", "board-ds18b20-0:GND", "black", [ "h-111.65", "v294.35", "h38.4" ] ],
-    [ "wokwi-servo-0:GND", "board-ds18b20-0:GND", "black", [ "h0" ] ],
     [ "wokwi-servo-0:PWM", "pico:GP14", "green", [ "h-134.4", "v-316.6" ] ],
-    [ "wokwi-buzzer-0:1", "pico:GND.8", "green", [ "v19.2", "h-230.4", "v-134.4" ] ],
-    [ "wokwi-buzzer-0:2", "pico:GP17", "green", [ "v0" ] ],
     [ "wokwi-rgb-led-0:COM", "pico:GND.7", "green", [ "v0" ] ],
     [ "board-ssd1306-0:GND", "pico:GND.5", "black", [ "v0" ] ],
     [ "wokwi-mpu6050-0:GND", "pico:GND.5", "black", [ "v0" ] ],
     [ "wokwi-mpu6050-0:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "wokwi-mpu6050-0:SCL", "pico:GP19", "green", [ "v0" ] ],
-    [ "wokwi-mpu6050-0:SDA", "pico:GP19", "green", [ "v0" ] ],
     [ "board-ssd1306-0:VCC", "pico:3V3", "red", [ "v0" ] ],
     [ "wokwi-rgb-led-0:R", "pico:GP27", "green", [ "v0" ] ],
     [ "wokwi-rgb-led-0:G", "pico:GP26", "green", [ "v0" ] ],
     [ "wokwi-rgb-led-0:B", "pico:GP22", "green", [ "v0" ] ],
-    [ "pico:GP21", "board-ssd1306-0:SDA", "green", [ "h0" ] ],
-    [ "board-ssd1306-0:SCL", "pico:GP20", "green", [ "v-153.6", "h-201.3" ] ],
-    [ "wokwi-servo-0:V+", "pico:3V3", "green", [ "h-28.8", "v-28.7", "h172.8", "v-371.15" ] ]
+    [ "wokwi-servo-0:V+", "pico:3V3", "green", [ "h-28.8", "v-28.7", "h172.8", "v-371.15" ] ],
+    [ "board-ssd1306-0:SCL", "pico:GP5", "green", [ "v-86.4", "h-278.1", "v-153.6" ] ],
+    [ "board-ssd1306-0:SDA", "pico:GP4", "green", [ "v-96", "h-278.33", "v-144" ] ],
+    [ "wokwi-servo-0:GND", "pico:GND.5", "black", [ "h0" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.6", "green", [ "v0" ] ],
+    [ "wokwi-buzzer-0:2", "pico:GP21", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
