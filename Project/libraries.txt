@@ -2,8 +2,6 @@
 # See https://docs.wokwi.com/guides/libraries
 
 Adafruit MPU6050
-DS18B20
-DHTlib
 Adafruit GFX Library
 Servo
 Adafruit SSD1306
